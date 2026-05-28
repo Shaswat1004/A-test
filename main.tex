@@ -65,4 +65,73 @@ prd,
 \date{\today}
 \maketitle
 
+\section{Two Nambu-Goto Strings}
+
+Following the effective-string discussion of Aharony and Komargodski,
+\href{https://arxiv.org/abs/1302.6257}{arXiv:1302.6257}, the leading
+weight-zero term for a long string is the Nambu-Goto action, namely the
+string tension times the induced worldsheet area.  For two independent
+strings, let
+\begin{equation}
+  X_{(s)}^{\mu} = X_{(s)}^{\mu}(\sigma_s^0,\sigma_s^1),
+  \qquad s=1,2,
+\end{equation}
+be the two spacetime embeddings.  The induced metric on the worldsheet of
+string $s$ is
+\begin{equation}
+  h^{(s)}_{ab}
+  = \partial_a X_{(s)}^{\mu}\,\partial_b X^{(s)}_{\mu},
+  \qquad a,b=0,1 .
+\end{equation}
+The Nambu-Goto action for two decoupled strings is therefore the sum of the
+two induced areas,
+\begin{equation}
+  S_{\mathrm{NG}}^{(1+2)}
+  =
+  -\sum_{s=1}^{2} T_s \int d^2\sigma_s\,
+  \sqrt{-\det h^{(s)}_{ab}} .
+  \label{eq:two-string-ng-covariant}
+\end{equation}
+Here $T_s$ is the tension of string $s$; the equal-tension case follows by
+setting $T_1=T_2=T$.
+
+In static gauge, with $X_{(s)}^0=\sigma_s^0\equiv \tau_s$ and
+$X_{(s)}^1=\sigma_s^1\equiv \sigma_s$, the transverse fluctuations are
+$X_{(s)}^i(\tau_s,\sigma_s)$ for $i=2,\ldots,D-1$.  Using the mostly-plus
+worldsheet metric $\eta_{ab}=\operatorname{diag}(-1,+1)$, the same action
+may be written as
+\begin{equation}
+  S_{\mathrm{NG}}^{(1+2)}
+  =
+  -\sum_{s=1}^{2} T_s \int d^2\sigma_s\,
+  \sqrt{-\det\!\left(
+    \eta_{ab}
+    + \partial_a X_{(s)}^i\,\partial_b X_{(s)}^i
+  \right)} .
+  \label{eq:two-string-ng-static-gauge}
+\end{equation}
+Equivalently, the static-gauge Lagrangian density for string $s$ is
+\begin{align}
+  \mathcal{L}_{s}
+  =
+  -T_s
+  \sqrt{
+    \left(1-\dot{X}_{(s)}^i\dot{X}_{(s)}^i\right)
+    \left(1+X_{(s)}^{j\prime}X_{(s)}^{j\prime}\right)
+    +
+    \left(\dot{X}_{(s)}^i X_{(s)}^{i\prime}\right)^2
+  } .
+  \label{eq:single-string-ng-density}
+\end{align}
+Dots and primes denote derivatives with respect to $\tau_s$ and $\sigma_s$,
+respectively, and repeated transverse indices are summed.  If the two
+worldsheets are described using common coordinates, the total Lagrangian
+density is simply
+\begin{equation}
+  \mathcal{L}_{\mathrm{tot}} = \mathcal{L}_1 + \mathcal{L}_2 .
+\end{equation}
+No interaction term has been included; equations
+\eqref{eq:two-string-ng-covariant}--\eqref{eq:single-string-ng-density}
+represent two independent Nambu-Goto strings.
+
 \end{document}
