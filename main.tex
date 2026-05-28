@@ -217,4 +217,71 @@ $\eta^{ab}$.  In terms of the sum and relative fields,
 The factors of $1/4$, $1/16$, and $1/64$ arise because the variables in
 \eqref{eq:sum-relative-fields} are not normalized by $1/\sqrt{2}$.
 
+\subsection{Shift currents}
+
+The Lagrangian in \eqref{eq:two-string-ng-sum-relative} depends only on
+derivatives of $X_{\mathrm{s}}^i$ and $X_{\mathrm{r}}^i$.  It therefore has
+independent constant-shift symmetries
+\begin{equation}
+  X_{\mathrm{s}}^i \to X_{\mathrm{s}}^i+\epsilon_{\mathrm{s}}^i,
+  \qquad
+  X_{\mathrm{r}}^i \to X_{\mathrm{r}}^i+\epsilon_{\mathrm{r}}^i .
+\end{equation}
+The associated Noether currents are obtained by differentiating
+\eqref{eq:two-string-ng-sum-relative} with respect to the corresponding field
+derivatives,
+\begin{equation}
+  J_{\mathrm{s}}^{a i}
+  \equiv
+  \frac{\partial\mathcal{L}_{\mathrm{tot}}}
+       {\partial(\partial_a X_{\mathrm{s}}^i)},
+  \qquad
+  J_{\mathrm{r}}^{a i}
+  \equiv
+  \frac{\partial\mathcal{L}_{\mathrm{tot}}}
+       {\partial(\partial_a X_{\mathrm{r}}^i)} .
+\end{equation}
+Through the same four-derivative order, these currents are
+\begin{align}
+  J_{\mathrm{s}}^{a i}
+  =
+  &-\frac{T}{2}\,\partial^a X_{\mathrm{s}}^i
+  -\frac{T}{16}
+    \left(P_{X_{\mathrm{s}}}+P_{X_{\mathrm{r}}}\right)
+    \partial^a X_{\mathrm{s}}^i
+  -\frac{T}{8}P_{\mathrm{sr}}\,
+    \partial^a X_{\mathrm{r}}^i
+  \notag\\
+  &+\frac{T}{8}
+    \left(G_{X_{\mathrm{s}}}^{ab}+G_{X_{\mathrm{r}}}^{ab}\right)
+    \partial_b X_{\mathrm{s}}^i
+  +\frac{T}{8}
+    G_{\mathrm{sr}}^{ab}\partial_b X_{\mathrm{r}}^i
+  +\mathcal{O}(\partial^5),
+  \label{eq:shift-current-sum}
+  \\
+  J_{\mathrm{r}}^{a i}
+  =
+  &-\frac{T}{2}\,\partial^a X_{\mathrm{r}}^i
+  -\frac{T}{16}
+    \left(P_{X_{\mathrm{s}}}+P_{X_{\mathrm{r}}}\right)
+    \partial^a X_{\mathrm{r}}^i
+  -\frac{T}{8}P_{\mathrm{sr}}\,
+    \partial^a X_{\mathrm{s}}^i
+  \notag\\
+  &+\frac{T}{8}
+    \left(G_{X_{\mathrm{s}}}^{ab}+G_{X_{\mathrm{r}}}^{ab}\right)
+    \partial_b X_{\mathrm{r}}^i
+  +\frac{T}{8}
+    G_{\mathrm{sr}}^{ab}\partial_b X_{\mathrm{s}}^i
+  +\mathcal{O}(\partial^5).
+  \label{eq:shift-current-relative}
+\end{align}
+The equations of motion can be written as current conservation laws,
+\begin{equation}
+  \partial_a J_{\mathrm{s}}^{a i}=0,
+  \qquad
+  \partial_a J_{\mathrm{r}}^{a i}=0.
+\end{equation}
+
 \end{document}
