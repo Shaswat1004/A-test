@@ -134,4 +134,87 @@ No interaction term has been included; equations
 \eqref{eq:two-string-ng-covariant}--\eqref{eq:single-string-ng-density}
 represent two independent Nambu-Goto strings.
 
+\subsection{Equal tensions and four-derivative expansion}
+
+Now set $T_1=T_2=T$ and assume the two strings are described using the same
+static-gauge worldsheet coordinates.  To avoid confusing the string label with
+the sum field below, let the individual strings be labelled by $A=1,2$ in this
+subsection.  Expanding the determinant form of the Nambu-Goto Lagrangian gives
+for each string
+\begin{align}
+  \mathcal{L}_{A}
+  =
+  -T
+  -\frac{T}{2}\,\partial_a X_A^i\,\partial^a X_A^i
+  -\frac{T}{8}
+    \left(\partial_a X_A^i\,\partial^a X_A^i\right)^2
+  +\frac{T}{4}
+    \left(\partial_a X_A^i\,\partial_b X_A^i\right)
+    \left(\partial^a X_A^j\,\partial^b X_A^j\right)
+  +\mathcal{O}(\partial^6) .
+  \label{eq:single-string-ng-four-derivative}
+\end{align}
+Thus, through four-derivative order, the two-string Lagrangian density is
+\begin{align}
+  \mathcal{L}_{\mathrm{tot}}
+  =
+  -2T
+  &-\frac{T}{2}\sum_{A=1}^{2}
+    \partial_a X_A^i\,\partial^a X_A^i
+  -\frac{T}{8}\sum_{A=1}^{2}
+    \left(\partial_a X_A^i\,\partial^a X_A^i\right)^2
+  \notag\\
+  &+\frac{T}{4}\sum_{A=1}^{2}
+    \left(\partial_a X_A^i\,\partial_b X_A^i\right)
+    \left(\partial^a X_A^j\,\partial^b X_A^j\right)
+  +\mathcal{O}(\partial^6) .
+  \label{eq:two-string-ng-four-derivative}
+\end{align}
+
+Introduce sum and relative variables
+\begin{equation}
+  X_{\mathrm{s}}^i = X_1^i+X_2^i,
+  \qquad
+  X_{\mathrm{r}}^i = X_1^i-X_2^i,
+  \qquad
+  X_1^i=\frac{X_{\mathrm{s}}^i+X_{\mathrm{r}}^i}{2},
+  \qquad
+  X_2^i=\frac{X_{\mathrm{s}}^i-X_{\mathrm{r}}^i}{2}.
+  \label{eq:sum-relative-fields}
+\end{equation}
+For compactness define
+\begin{align}
+  P_Y &\equiv \partial_a Y^i\,\partial^a Y^i,
+  &
+  P_{\mathrm{sr}} &\equiv
+    \partial_a X_{\mathrm{s}}^i\,\partial^a X_{\mathrm{r}}^i,
+  \notag\\
+  G^Y_{ab} &\equiv \partial_a Y^i\,\partial_b Y^i,
+  &
+  G^{\mathrm{sr}}_{ab} &\equiv
+    \partial_a X_{\mathrm{s}}^i\,\partial_b X_{\mathrm{r}}^i
+    +\partial_a X_{\mathrm{r}}^i\,\partial_b X_{\mathrm{s}}^i ,
+\end{align}
+with $Y=X_{\mathrm{s}},X_{\mathrm{r}}$ and indices raised by
+$\eta^{ab}$.  In terms of the sum and relative fields,
+\begin{align}
+  \mathcal{L}_{\mathrm{tot}}
+  =
+  -2T
+  &-\frac{T}{4}\left(P_{X_{\mathrm{s}}}+P_{X_{\mathrm{r}}}\right)
+  -\frac{T}{64}
+    \left(P_{X_{\mathrm{s}}}+P_{X_{\mathrm{r}}}\right)^2
+  -\frac{T}{16}P_{\mathrm{sr}}^2
+  \notag\\
+  &+\frac{T}{32}
+    \left(G^{X_{\mathrm{s}}}_{ab}+G^{X_{\mathrm{r}}}_{ab}\right)
+    \left(G_{X_{\mathrm{s}}}^{ab}+G_{X_{\mathrm{r}}}^{ab}\right)
+  +\frac{T}{32}
+    G^{\mathrm{sr}}_{ab}G_{\mathrm{sr}}^{ab}
+  +\mathcal{O}(\partial^6) .
+  \label{eq:two-string-ng-sum-relative}
+\end{align}
+The factors of $1/4$, $1/16$, and $1/64$ arise because the variables in
+\eqref{eq:sum-relative-fields} are not normalized by $1/\sqrt{2}$.
+
 \end{document}
