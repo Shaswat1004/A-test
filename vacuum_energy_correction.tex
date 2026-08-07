@@ -281,6 +281,63 @@ arbitrary local vacuum-energy counterterm, as
     \left(1+\log\frac{\bar\mu^2}{m^2}\right).
   \label{eq:gaussian-one-loop-vacuum-msbar}
 \end{equation}
+It is useful to collect the different orders explicitly.  Writing again
+$L=\log(\bar\mu^2/m^2)$, the classical energy of the two strings, the bare
+one-loop determinant, and the bare figure-eight graph give, through order
+$1/T$,
+\begin{align}
+  \rho_{\mathrm{vac}}
+  ={}& 2T
+  +\frac{Nm^2}{8\pi}
+   \left(\frac{1}{\epsilon}+1+L\right)
+  \notag\\
+  &-\frac{Nm^4}{128\pi^2T}
+  \left[
+    \frac{1}{\epsilon^2}
+    +\frac{2L+N/2}{\epsilon}
+    +2L^2+NL+\frac{\pi^2}{6}+\frac{N}{2}
+  \right]
+  \notag\\
+  &+\delta\rho_{\mathrm{vac}}
+   +\rho_{\mathrm{param\,ct}}
+   +\mathcal O(\epsilon)+\mathcal O(T^{-2}).
+  \label{eq:total-vacuum-energy-bare-through-fig8}
+\end{align}
+Here $\delta\rho_{\mathrm{vac}}$ is the local vacuum-energy, or equivalently
+string-tension, counterterm.  The term $\rho_{\mathrm{param\,ct}}$ denotes
+counterterm insertions in lower-loop graphs that may be required when the
+parameters of the additional mass deformation are renormalized.
+
+Consequently the renormalized result has the general structure
+\begin{align}
+  \rho_{\mathrm{vac}}^{\mathrm{ren}}
+  ={}& 2T_{\mathrm{ren}}
+  +\frac{Nm^2}{8\pi}(1+L)
+  +\Delta\rho_{\mathrm{fig8}}^{\mathrm{ren}}
+  +\delta\rho_{\mathrm{vac}}^{\mathrm{fin}}
+  +\rho_{\mathrm{param\,ct}}^{\mathrm{fin}}
+  +\mathcal O(T^{-2}).
+  \label{eq:total-vacuum-energy-renormalized-structure}
+\end{align}
+For bookkeeping, if one simply removes the displayed poles from the two loop
+graphs and sets all finite counterterms to zero, their graph-only finite sum
+would be
+\begin{align}
+  \rho_{\mathrm{vac}}^{\mathrm{graph,fin}}
+  ={}& 2T
+  +\frac{Nm^2}{8\pi}(1+L)
+  \notag\\
+  &-\frac{Nm^4}{128\pi^2T}
+  \left(2L^2+NL+\frac{\pi^2}{6}+\frac{N}{2}\right)
+  +\mathcal O(T^{-2}).
+  \label{eq:total-vacuum-energy-graph-finite}
+\end{align}
+Equation~\eqref{eq:total-vacuum-energy-graph-finite} is not a
+scheme-independent prediction: finite choices in
+$\delta\rho_{\mathrm{vac}}^{\mathrm{fin}}$ and in the parameter-counterterm
+insertions change it.  A physical absolute vacuum energy therefore requires
+renormalization conditions beyond the Nambu--Goto derivative interactions.
+
 Thus the perturbative ordering is: the determinant
 Eq.~\eqref{eq:gaussian-one-loop-vacuum} is a one-loop effect already present in
 the quadratic theory, whereas Eq.~\eqref{eq:figure-eight-compact-result} is the
