@@ -1,5 +1,5 @@
 (* Mathematica cross-check for the two-loop figure-eight vacuum-energy graph. *)
-ClearAll[d, Nn, T, eps, Km, Im, m, mub, L];
+ClearAll[d, Nn, T, eps, Km, m, m2, mub, L];
 
 (* Coincident derivative propagator:
    <d_a phi^i d_b phi^j> = delta^{ij} delta_{ab} Km/d. *)
@@ -60,8 +60,12 @@ Print["Dimension check [m^4/T] = 2: ", 4 - 2 == 2];
 (* One-loop determinant derivative check:
    d/d(m^2) [m^2/(8Pi) (1 + Log[mub^2/m^2])]
    = Log[mub^2/m^2]/(8Pi) = (1/2) I_m^ren. *)
-oneLoopMSbar = m^2/(8 Pi) (1 + Log[mub^2/m^2]);
-Print["One-loop derivative: ", FullSimplify[D[oneLoopMSbar, m^2]]];
+oneLoopMSbar = m2/(8 Pi) (1 + Log[mub^2/m2]);
+oneLoopDerivative = FullSimplify[D[oneLoopMSbar, m2]];
+ExpectedHalfTadpole = Log[mub^2/m2]/(8 Pi);
+Print["One-loop derivative: ", oneLoopDerivative];
+Print["One-loop derivative matches half the renormalized tadpole: ",
+  FullSimplify[oneLoopDerivative - ExpectedHalfTadpole] === 0];
 
 (* Important conceptual checks, not algebraic identities:
    1. Mixed massless/massive vacuum contractions vanish only because the

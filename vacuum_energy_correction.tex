@@ -147,21 +147,28 @@ Introduce
   (\partial_a\phi_{\mathrm r}^i\partial_b\phi_{\mathrm r}^i)
   (\partial_a\phi_{\mathrm r}^j\partial_b\phi_{\mathrm r}^j).
 \end{equation}
-For $\langle A^2\rangle_0$, the disconnected Wick pairing inside each copy of
-$A$ gives $N^2K_m^2$, while the two crossed pairings together give
-$2NK_m^2/d$.  Therefore
-\begin{equation}
+Writing $U_a^i\equiv\partial_a\phi_{\mathrm r}^i$, order the four fields in
+$A^2$ as $(U_a^i,U_a^i,U_b^j,U_b^j)$.  The three Wick pairings are
+\begin{align}
   \langle A^2\rangle_0
-  = \frac{N(Nd+2)}{d}\,K_m^2 .
+  &= \underbrace{N^2K_m^2}_{(12)(34)}
+     +\underbrace{\frac{N}{d}K_m^2}_{(13)(24)}
+     +\underbrace{\frac{N}{d}K_m^2}_{(14)(23)}
+  \notag\\
+  &= \frac{N(Nd+2)}{d}\,K_m^2 .
   \label{eq:A2-wick-result}
-\end{equation}
-For $\langle B\rangle_0$, the three Wick pairings give respectively
-$N^2K_m^2/d$, $NK_m^2$, and $NK_m^2/d$, so that
-\begin{equation}
+\end{align}
+For $B$, instead order the fields as
+$(U_a^i,U_b^i,U_a^j,U_b^j)$.  Its three pairings give
+\begin{align}
   \langle B\rangle_0
-  = \frac{N(N+d+1)}{d}\,K_m^2 .
+  &= \underbrace{\frac{N^2}{d}K_m^2}_{(12)(34)}
+     +\underbrace{NK_m^2}_{(13)(24)}
+     +\underbrace{\frac{N}{d}K_m^2}_{(14)(23)}
+  \notag\\
+  &= \frac{N(N+d+1)}{d}\,K_m^2 .
   \label{eq:B-wick-result}
-\end{equation}
+\end{align}
 Substituting Eqs.~\eqref{eq:A2-wick-result} and \eqref{eq:B-wick-result} into
 Eq.~\eqref{eq:vacuum-energy-first-interaction} gives the regulated result
 \begin{align}
