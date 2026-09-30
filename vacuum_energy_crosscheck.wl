@@ -96,10 +96,11 @@ CoeffNs = Series[
    ExpectedNs/Km^2 /. d -> 2 - 2 eps,
    {eps, 0, 2}
    ] // Normal // Expand;
-ExpectedCoeffNs =
+ExpectedCoeffNs = (
   -np (Ns - 1)^2/(4 T Ns)
   -np^2 (Ns - 1)^2 eps/(8 T Ns)
-  -np^2 (Ns - 1)^2 eps^2/(8 T Ns);
+  -np^2 (Ns - 1)^2 eps^2/(8 T Ns)
+  );
 Print["N_s-string coefficient expansion: ", CoeffNs];
 Print["N_s-string coefficient expansion matches: ",
   FullSimplify[CoeffNs - ExpectedCoeffNs] === 0];
