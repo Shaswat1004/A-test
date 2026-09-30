@@ -466,3 +466,308 @@ Several checks are useful:
   especially useful check against an apparently plausible but incomplete
   calculation.
 \end{enumerate}
+
+\subsection{Vacuum energy from a general local binding potential}
+\label{subsec:general-binding-potential}
+
+The quadratic deformation in Eq.~\eqref{eq:relative-mass-term} is the leading
+term in a more general local binding potential.  To compare directly with a
+description in terms of the average and half-separation fields, define
+\begin{equation}
+  Y^i\equiv\frac{X_1^i+X_2^i}{2}=\frac{X_{\mathrm s}^i}{2},
+  \qquad
+  Q^i\equiv\frac{X_1^i-X_2^i}{2}=\frac{X_{\mathrm r}^i}{2}.
+  \label{eq:Y-Q-to-sum-relative}
+\end{equation}
+The canonically normalized relative field will be denoted by
+\begin{equation}
+  q^i\equiv\sqrt{2T}\,Q^i
+  =\sqrt{\frac{T}{2}}\,X_{\mathrm r}^i
+  =\phi_{\mathrm r}^i.
+  \label{eq:canonical-q-definition}
+\end{equation}
+Thus its Euclidean Gaussian Lagrangian and propagator are
+\begin{align}
+  \mathcal L_{0,E}[q]
+  &=\frac12\partial_aq^i\partial_aq^i+\frac12m^2q^iq^i,
+  &
+  \langle q^i(p)q^j(-p)\rangle_0
+  &=\frac{\delta^{ij}}{p^2+m^2}.
+  \label{eq:canonical-q-free-theory}
+\end{align}
+In particular, there is no factor $1/(2T)$ in the canonical propagator.  Such
+a factor would appear only if the noncanonical field $Q$ were used directly.
+As above, $N$ denotes the number of massive transverse relative components.
+
+Transverse $O(N)$ invariance makes an ordinary scalar potential a function of
+$Q^2\equiv Q^iQ^i$.  Moreover, for two identical strings the interchange
+$X_1\leftrightarrow X_2$ sends $Q\to-Q$, so the binding potential must be even.
+We therefore write the Euclidean potential density as
+\begin{equation}
+  V(Q)=c_0+c_1Q^2+\sum_{n\geq2}c_n(Q^2)^n.
+  \label{eq:noncanonical-binding-potential}
+\end{equation}
+This is an expansion in the invariant $(Q^2)^n=(Q^iQ^i)^n$, not in the
+$n$th power of a single scalar component.  Equation~\eqref{eq:canonical-q-definition}
+gives
+\begin{equation}
+  (Q^2)^n=\frac{(q^2)^n}{(2T)^n},
+  \qquad
+  \lambda_n\equiv\frac{c_n}{(2T)^n},
+  \qquad
+  U_{\mathrm{int}}(q)=\sum_{n\geq2}\lambda_n(q^2)^n,
+  \label{eq:canonical-binding-couplings}
+\end{equation}
+where $q^2\equiv q^iq^i$.  The constant $U_0=c_0$ shifts the classical
+tension directly.  The quadratic term is treated nonperturbatively as part of
+the Gaussian action: matching $c_1Q^2$ to $m^2q^2/2$ gives
+\begin{equation}
+  c_1=Tm^2.
+  \label{eq:binding-quadratic-coefficient}
+\end{equation}
+These equations take $V(Q)$ itself to be an energy density.  If instead a
+handwritten convention writes the potential contribution as
+$T\widetilde V(Q)$, then $c_n=T\widetilde c_n$ and
+$\lambda_n=T\widetilde c_n/(2T)^n$.  The canonical theory in
+Eqs.~\eqref{eq:canonical-q-free-theory} and
+\eqref{eq:canonical-binding-couplings} fixes the convention used below.
+
+We now compute only the straight-string vacuum energy, setting
+$\partial_aY^i=0$.  No correction to the $Y$ kinetic term and no mixed
+$Y$--$Q$ derivative operator is included.  For one chosen $n\geq2$, let
+\begin{equation}
+  S_{\mathrm{int},E}^{(n)}
+  =\int d^d x\,\lambda_n(q^2)^n.
+\end{equation}
+Expanding the vacuum functional to first order in $\lambda_n$ gives
+\begin{align}
+  Z
+  &=Z_0\left\langle e^{-S_{\mathrm{int},E}^{(n)}}\right\rangle_0
+   =Z_0\left[1-\left\langle S_{\mathrm{int},E}^{(n)}\right\rangle_0
+     +\mathcal O(\lambda_n^2)\right],
+  \notag\\
+  W=-\log Z
+  &=W_0+\left\langle S_{\mathrm{int},E}^{(n)}\right\rangle_0
+    +\mathcal O(\lambda_n^2),
+  \notag\\
+  \Delta\rho_n^{\mathrm{linear}}
+  &=\lambda_n\left\langle(q^2)^n\right\rangle_0.
+  \label{eq:potential-vacuum-functional-expansion}
+\end{align}
+The sign is consequently positive for positive $\lambda_n$.  No additional
+vertex sign or diagrammatic symmetry factor is appended after Wick's theorem
+has enumerated the contractions.
+
+\paragraph{Wick-combinatoric derivation.}
+At one spacetime point,
+\begin{equation}
+  \langle q^i q^j\rangle_0=\delta^{ij}I_m,
+  \qquad
+  I_m\equiv\int_p\frac{1}{p^2+m^2}.
+\end{equation}
+Write
+$\langle(q^2)^n\rangle_0=C_n(N)I_m^n$ and label the two legs belonging to
+one selected $q^2$.  If those legs contract with each other, their index loop
+gives $N$ times a contraction of the remaining $n-1$ factors.  Otherwise,
+remove the selected legs and reconnect their two partners.  The inverse
+construction chooses one of the $n-1$ pairs and either orientation, giving
+$2(n-1)$ further contractions for every contraction at order $n-1$.  Hence
+\begin{equation}
+  C_n(N)=\bigl[N+2(n-1)\bigr]C_{n-1}(N),
+  \qquad C_0(N)=1,
+\end{equation}
+and therefore
+\begin{equation}
+  C_n(N)=\prod_{r=0}^{n-1}(N+2r).
+  \label{eq:ON-gaussian-moment-product}
+\end{equation}
+
+For $n=2$, the three Wick pairings can be displayed directly:
+\begin{align}
+  \left\langle(q^2)^2\right\rangle_0
+  &=\left\langle q^iq^iq^jq^j\right\rangle_0
+  \notag\\
+  &=\underbrace{\delta^{ii}\delta^{jj}I_m^2}_{(12)(34)}
+   +\underbrace{\delta^{ij}\delta^{ij}I_m^2}_{(13)(24)}
+   +\underbrace{\delta^{ij}\delta^{ij}I_m^2}_{(14)(23)}
+  \notag\\
+  &=N(N+2)I_m^2.
+  \label{eq:q4-three-wick-pairings}
+\end{align}
+The recursion then gives the explicit checks
+\begin{align}
+  \left\langle(q^2)^2\right\rangle_0
+  &=N(N+2)I_m^2,
+  \notag\\
+  \left\langle(q^2)^3\right\rangle_0
+  &=N(N+2)(N+4)I_m^3,
+  \notag\\
+  \left\langle(q^2)^4\right\rangle_0
+  &=N(N+2)(N+4)(N+6)I_m^4.
+  \label{eq:low-n-ON-gaussian-moments}
+\end{align}
+For $N=1$, Eq.~\eqref{eq:ON-gaussian-moment-product} becomes
+$(2n-1)!!$, reproducing
+$\langle q^4\rangle_0=3I_m^2$,
+$\langle q^6\rangle_0=15I_m^3$, and
+$\langle q^8\rangle_0=105I_m^4$.
+
+\paragraph{Generating-function derivation.}
+The $N$ components are independent Gaussians of variance $I_m$, so
+\begin{equation}
+  F(t)\equiv\left\langle e^{tq^2}\right\rangle_0
+  =\prod_{i=1}^N\left\langle e^{t(q^i)^2}\right\rangle_0
+  =(1-2I_mt)^{-N/2}.
+\end{equation}
+Taking $n$ derivatives at the origin yields
+\begin{align}
+  \left\langle(q^2)^n\right\rangle_0
+  &=\left.\frac{d^nF(t)}{dt^n}\right|_{t=0}
+  =2^n\frac{\Gamma(n+N/2)}{\Gamma(N/2)}I_m^n
+  \notag\\
+  &=\left[\prod_{r=0}^{n-1}(N+2r)\right]I_m^n,
+  \label{eq:ON-gaussian-moment-gamma}
+\end{align}
+in agreement with the Wick counting.
+
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}{0.30\linewidth}
+    \centering
+    \begin{tikzpicture}[line width=0.85pt]
+      \draw (-0.48,0) circle (0.48);
+      \draw (0.48,0) circle (0.48);
+      \node[draw,fill=white,minimum size=5pt,inner sep=0pt] at (0,0) {};
+      \node at (0,-0.76) {$\lambda_2(q^2)^2$};
+      \node at (0,-1.08) {two loops};
+    \end{tikzpicture}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.30\linewidth}
+    \centering
+    \begin{tikzpicture}[line width=0.85pt]
+      \draw (0.48,0) circle (0.48);
+      \draw (-0.24,0.416) circle (0.48);
+      \draw (-0.24,-0.416) circle (0.48);
+      \node[draw,fill=white,minimum size=5pt,inner sep=0pt] at (0,0) {};
+      \node at (0,-0.98) {$\lambda_3(q^2)^3$};
+      \node at (0,-1.30) {three loops};
+    \end{tikzpicture}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.30\linewidth}
+    \centering
+    \begin{tikzpicture}[line width=0.85pt]
+      \draw (0.45,0) circle (0.45);
+      \draw (-0.45,0) circle (0.45);
+      \draw (0,0.45) circle (0.45);
+      \node at (0,-0.43) {$\cdots$};
+      \node[draw,fill=white,minimum size=5pt,inner sep=0pt] at (0,0) {};
+      \node at (0,-0.92) {$\lambda_n(q^2)^n$};
+      \node at (0,-1.24) {$n$ loops};
+    \end{tikzpicture}
+  \end{minipage}
+  \caption{One-vertex vacuum graphs generated by the local binding potential.
+  The square denotes the potential insertion, distinguishing these graphs from
+  the derivative Nambu--Goto vertex in Fig.~\ref{fig:vacuum-diagrams}.  A
+  $(q^2)^n$ insertion has one vertex but $n$ independent loop momenta.}
+  \label{fig:binding-potential-vacuum-diagrams}
+\end{figure}
+
+The first panel is a two-loop figure-eight-type graph, the second is a
+three-loop one-vertex graph, and the general operator produces an $n$-loop
+connected vacuum graph.  These graphs are first order in $\lambda_n$ despite
+their loop order.  The quadratic term is exceptional: incorporating it in the
+Gaussian propagator resums mass insertions and produces the ordinary one-loop
+determinant
+\begin{equation}
+  \rho_{\mathrm{det}}(m)=\frac{N}{2}\int_p\log(p^2+m^2),
+\end{equation}
+not a final treatment based on one perturbative mass insertion.
+
+Combining Eqs.~\eqref{eq:potential-vacuum-functional-expansion} and
+\eqref{eq:ON-gaussian-moment-gamma} gives the central result
+\begin{equation}
+  \boxed{
+  \Delta\rho_n^{\mathrm{linear}}
+  =\lambda_n\left[\prod_{r=0}^{n-1}(N+2r)\right]I_m^n
+  =\lambda_n\,2^n\frac{\Gamma(n+N/2)}{\Gamma(N/2)}I_m^n
+  }
+  \qquad(n\geq2).
+  \label{eq:binding-potential-central-result}
+\end{equation}
+In terms of the coefficient of the noncanonical operator, this is equivalently
+\begin{equation}
+  \Delta\rho_n^{\mathrm{linear}}
+  =\frac{c_n}{(2T)^n}
+   \left[\prod_{r=0}^{n-1}(N+2r)\right]I_m^n.
+  \label{eq:binding-potential-noncanonical-result}
+\end{equation}
+
+Using the same $d=2-2\epsilon$ and $\overline{\mathrm{MS}}$ measure as
+Eq.~\eqref{eq:K0-Km-definitions}, the tadpole is
+\begin{equation}
+  I_m=\frac{1}{4\pi}
+  \left[\frac{1}{\epsilon}+L
+  +\epsilon\left(\frac{L^2}{2}+\frac{\pi^2}{12}\right)
+  +\mathcal O(\epsilon^2)\right],
+  \qquad L=\log\frac{\bar\mu^2}{m^2},
+\end{equation}
+and the bare graph is
+\begin{equation}
+  \Delta\rho_n^{\mathrm{bare}}
+  =\lambda_n C_n(N)[I_m]^n,
+  \qquad C_n(N)=\prod_{r=0}^{n-1}(N+2r).
+  \label{eq:binding-potential-bare-result}
+\end{equation}
+It contains poles through $1/\epsilon^n$.  A renormalized result generally
+requires renormalization of the $\lambda_n$, lower-order coupling-counterterm
+insertions, mixing among the operators $(q^2)^k$, and the local
+vacuum-energy/string-tension counterterm.  Consequently, discarding the poles
+of Eq.~\eqref{eq:binding-potential-bare-result} does not define a
+scheme-independent physical tension.
+
+The power counting also differs from the derivative expansion.  In two
+worldsheet dimensions
+\begin{equation}
+  [q]=0,
+  \qquad [Q]=-1,
+  \qquad [\lambda_n]=2,
+  \qquad [c_n]=2+2n,
+\end{equation}
+where $[T]=2$ and $Q=q/\sqrt{2T}$.  Since $I_m$ is dimensionless at $d=2$,
+$\lambda_nI_m^n$ has the required energy-density dimension two.  Increasing
+$n$ does not by itself suppress an operator; suppression depends on the
+hierarchy and natural size of its Wilson coefficient.
+
+For the full canonical potential
+\begin{equation}
+  U(q)=U_0+\frac12m^2q^2+\sum_{n\geq2}\lambda_n(q^2)^n,
+\end{equation}
+the potential-sector organization of the vacuum energy is
+\begin{align}
+  \rho_{\mathrm{vac}}
+  ={}&2T+U_0+\rho_{\mathrm{det}}(m)
+  +\sum_{n\geq2}\Delta\rho_n^{\mathrm{linear}}
+  \notag\\
+  &+\text{multi-vertex diagrams}+\text{counterterms}.
+  \label{eq:full-binding-potential-vacuum-organization}
+\end{align}
+The Nambu--Goto derivative figure-eight computed earlier is a distinct term to
+be added when both interaction sectors are retained.  The displayed sum is
+only linear in each $\lambda_n$; the interacting potential also produces
+terms such as $\lambda_2^2$, $\lambda_2\lambda_3$, and $\lambda_3^2$.
+
+If $Q\to-Q$ or transverse $O(N)$ invariance is absent, odd operators can occur
+in suitable one-component or tensor-valued theories.  A single odd Gaussian
+insertion has zero expectation value, although two odd vertices may contribute
+to the vacuum energy.  This does not modify the even $O(N)$-invariant potential
+used here.
+
+Finally, if the binding sector enters covariantly as
+$\sqrt{-h[Y]}\,V(Q)$, then
+$\sqrt{-h[Y]}=1+\tfrac12(\partial Y)^2+\cdots$ implies that a purely potential
+contribution $\Delta\rho_n$ to the constant term is accompanied by
+$\tfrac12\Delta\rho_n(\partial Y)^2$.  This is a useful Nambu--Goto
+consistency check, not an inclusion of the mixed derivative $A$-type
+calculation excluded above.

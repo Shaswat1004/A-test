@@ -1,5 +1,5 @@
 (* Mathematica cross-check for the two-loop figure-eight vacuum-energy graph. *)
-ClearAll[d, Nn, T, eps, Km, m, m2, mub, L, Ns, np, theta];
+ClearAll[d, Nn, T, eps, Km, m, m2, mub, L, Ns, np, theta, n, r];
 
 (* Coincident derivative propagator:
    <d_a phi^i d_b phi^j> = delta^{ij} delta_{ab} Km/d. *)
@@ -142,6 +142,45 @@ P3Rotated = FullSimplify[
 Print["Relative-basis rotation leaves projector invariant: ",
   FullSimplify[P3Rotated - P3, Assumptions -> Element[theta, Reals]] ===
     ConstantArray[0, {3, 3}]];
+
+(* General local binding potential.  Nn is the manuscript's component
+   multiplicity N; the built-in symbol N is intentionally not used. *)
+MomentGamma = 2^n Gamma[n + Nn/2]/Gamma[Nn/2];
+MomentProduct = Product[Nn + 2 r, {r, 0, n - 1}];
+MomentAssumptions = Element[n, Integers] && n >= 0 && Nn > 0;
+
+Print["Potential moment gamma/product identity: ",
+  FullSimplify[MomentGamma - MomentProduct,
+    Assumptions -> MomentAssumptions] === 0];
+
+LowPotentialMoments = Table[
+  FullSimplify[MomentGamma /. n -> k, Assumptions -> Nn > 0],
+  {k, 1, 4}
+  ];
+ExpectedLowPotentialMoments = {
+  Nn,
+  Nn (Nn + 2),
+  Nn (Nn + 2) (Nn + 4),
+  Nn (Nn + 2) (Nn + 4) (Nn + 6)
+  };
+Do[
+  Print["Potential moment n=", k, ": ", LowPotentialMoments[[k]]],
+  {k, 1, 4}
+  ];
+Print["Potential moments n=1,2,3,4 match: ",
+  FullSimplify[LowPotentialMoments - ExpectedLowPotentialMoments] ===
+    ConstantArray[0, 4]];
+
+N1PotentialMoments = FullSimplify[LowPotentialMoments /. Nn -> 1];
+Print["N=1 moments divided by I_m^n: ", N1PotentialMoments];
+Print["N=1 moments give 1,3,15,105: ",
+  N1PotentialMoments === {1, 3, 15, 105}];
+Print["Potential-moment Wick recursion: ",
+  FullSimplify[
+    (MomentGamma /. n -> n + 1) - (Nn + 2 n) MomentGamma,
+    Assumptions -> MomentAssumptions] === 0];
+Print["Explicit q^4 Wick pairings give N(N+2): ",
+  FullSimplify[Nn^2 + Nn + Nn - Nn (Nn + 2)] === 0];
 
 (* Important conceptual checks, not algebraic identities:
    1. Mixed massless/massive vacuum contractions vanish only because the
